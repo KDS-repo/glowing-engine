@@ -5,3 +5,7 @@
 .correct{
 	color: green;
 }
+
+td{
+	min-width: 12ch;
+}
