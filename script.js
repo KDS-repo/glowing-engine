@@ -22,13 +22,19 @@ window.onload = event => {
 		if (event.key == "Enter"){
 			let answer = inpt.value
 			//printing the output
-			let newline = document.createElement("p")
+			let newline = document.createElement("tr")
+			let equation = document.createElement("td")
 			let newcontent = document.createTextNode(equationString + answer)
-			newline.appendChild(newcontent)
+			equation.appendChild(newcontent)
 			if (product == parseInt(answer))
-				newline.classList.add("correct")
+				equation.classList.add("correct")
 			else
-				newline.classList.add("wrong")
+				equation.classList.add("wrong")
+			let corr = document.createElement("td")
+			newcontent = document.createTextNode(product.toString())
+			corr.appendChild(newcontent)
+			newline.appendChild(equation)
+			newline.appendChild(corr)
 			results.prepend(newline)
 			newNumbers()
 		}
